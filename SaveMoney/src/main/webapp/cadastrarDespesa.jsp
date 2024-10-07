@@ -4,7 +4,7 @@
 <html>
 <head>
 	<meta charset="UTF-8">
-	<title>Insert title here</title>
+	<title>Cadastrar Despesa</title>
 	<link rel="stylesheet" href="styles/style.css">
 </head>
 <body>
@@ -34,6 +34,5 @@
         	<button class="primary-buttons">Salvar</button>
         </div>
     </div>
-
 </body>
 </html>
