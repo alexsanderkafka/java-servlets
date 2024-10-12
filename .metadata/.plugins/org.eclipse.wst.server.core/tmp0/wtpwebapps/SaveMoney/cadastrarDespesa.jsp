@@ -6,6 +6,7 @@
 	<meta charset="UTF-8">
 	<title>Cadastrar Despesa</title>
 	<link rel="stylesheet" href="styles/style.css">
+	<link rel="stylesheet" href="styles/style-cadastro.css">
 </head>
 <body>
 	<header>
@@ -28,7 +29,10 @@
         	<label>Data: </label>
         	<input type="date">
         	<label>Categoria: </label>
-        	<input type="text">
+        	<select>
+        		<option value="loss">Gasto</option>
+    			<option value="save">Economia</option>
+        	</select>
         	<label>Descrição: </label>
         	<textarea rows="5" cols="2"></textarea>
         	<button class="primary-buttons">Salvar</button>
