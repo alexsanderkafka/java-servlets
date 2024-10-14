@@ -1,0 +1,77 @@
+@charset "UTF-8";
+
+/*CSS PAGINA LISTA DE DESPESAS*/
+.container-list{
+    margin-top: 100px;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.box-list{
+    /*background-color: #F4A942;*/
+    width: 80%;
+    height: auto;
+    padding: 40px;
+}
+
+.box-list h1{
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+
+.list-tile{
+    margin-top: 30px;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    border-radius: 5px;
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.3);
+    padding: 10px;
+}
+
+/*
+.list-tile img{
+    width: 64px;
+    height: 64px;
+}*/
+
+.text-list-tile{
+    margin-left: 12px;
+    font-family: 'Roboto', sans-serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.text-list-tile h1{
+    font-weight: bold;
+}
+
+.container-text-button{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.container-text-button button{
+    border-color: transparent;
+    border-radius: 5px;
+    background-color: #F22624;
+    width: 50px;
+    transition: background-color 0.5s ease;
+}
+
+.container-text-button button:hover{
+    background-color: #e9605e;
+}
+
+.container-text-button button:active{
+    background-color: #F22624;
+}

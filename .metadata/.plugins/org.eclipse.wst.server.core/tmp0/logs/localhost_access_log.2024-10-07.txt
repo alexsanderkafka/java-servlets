@@ -287,3 +287,5 @@
 127.0.0.1 - - [07/Oct/2024:17:01:09 -0300] "GET /SaveMoney/images/logo/send-money.png HTTP/1.1" 200 2768
 127.0.0.1 - - [07/Oct/2024:17:01:09 -0300] "GET /SaveMoney/images/logo/receive-money.png HTTP/1.1" 200 2774
 127.0.0.1 - - [07/Oct/2024:17:01:09 -0300] "GET /SaveMoney/styles/style.css HTTP/1.1" 200 4901
+127.0.0.1 - - [07/Oct/2024:17:04:20 -0300] "GET /SaveMoney/listaDespesas.jsp HTTP/1.1" 200 7306
+127.0.0.1 - - [07/Oct/2024:17:04:20 -0300] "GET /SaveMoney/styles/style.css HTTP/1.1" 304 -
