@@ -14,7 +14,7 @@ public class CadastrarDespesaServlet extends HttpServlet{
 	/**
 	 * 
 	 */
-	private static final long serialVersionUID = 1L;
+	//private static final long serialVersionUID = 1L;
 
 	@Override
 	
@@ -28,6 +28,7 @@ public class CadastrarDespesaServlet extends HttpServlet{
 		String categoria = request.getParameter("categoria");
 		String data = request.getParameter("data");
 		Despesa despesa = new Despesa(descricao, valor, data, categoria);
+		
 		// Adicione a despesa à lista ou banco de dados
 		response.sendRedirect("despesa/visualizar"); // Redireciona para a listagem de despesas
 	}

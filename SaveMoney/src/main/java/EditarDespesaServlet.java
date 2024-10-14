@@ -8,7 +8,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import model.Despesa;
 
-@WebServlet("quot;/despesa/editar")
+@WebServlet("/despesa/editar")
 public class EditarDespesaServlet extends HttpServlet{
 
 	/**
@@ -16,6 +16,7 @@ public class EditarDespesaServlet extends HttpServlet{
 	 */
 	private static final long serialVersionUID = 1L;
 
+	@SuppressWarnings("unused")
 	@Override
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub

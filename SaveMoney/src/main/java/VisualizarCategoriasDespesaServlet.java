@@ -17,13 +17,13 @@ public class VisualizarCategoriasDespesaServlet extends HttpServlet{
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
-		super.doGet(request, response);
+		//super.doGet(request, response);
 		
 		
 		// Lógica para listar categorias
 		//List<String> categorias = // Obtenha a lista de categoriass
 		//request.setAttribute("categoriasDespesas", categorias);
-		request.getRequestDispatcher("listarCategoriasDespesas.jsp").forward(request, response);
+		request.getRequestDispatcher("relatorioDespesas.jsp").forward(request, response);
 	}
 
 	
