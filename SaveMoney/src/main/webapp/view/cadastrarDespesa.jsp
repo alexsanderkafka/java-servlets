@@ -12,7 +12,7 @@
 	<header>
         <nav>
           <div class="logo">
-          	<a href="/SaveMoney">++Bolso</a>
+          	<a class="link-logo" href="/SaveMoney">++Bolso</a>
           </div>
           <ul class="nav-list">
             <li><a href="/SaveMoney/view/cadastrarDespesa.jsp">Cadastrar Despesa</a></li>
@@ -24,18 +24,20 @@
     
 	<div class="container-initial">
         <div class="box-register">
-        	<label>Valor: </label>
-        	<input type="number">
-        	<label>Data: </label>
-        	<input type="date">
-        	<label>Categoria: </label>
-        	<select>
-        		<option value="loss">Gasto</option>
-    			<option value="save">Economia</option>
-        	</select>
-        	<label>Descrição: </label>
-        	<textarea rows="5" cols="2"></textarea>
-        	<button class="primary-buttons">Salvar</button>
+        	<form action="/SaveMoney/despesa/cadastrar" method="POST">
+	        	<label>Valor: </label>
+	        	<input type="number" name="value">
+	        	<label>Data: </label>
+	        	<input type="date" name="date">
+	        	<label>Categoria: </label>
+	        	<select name="category">	
+	        		<option value="loss">Gasto</option>
+	    			<option value="save">Economia</option>
+	        	</select>
+	        	<label>Descrição: </label>
+	        	<textarea rows="5" cols="2" name="description"></textarea>
+	        	<input type="Submit" class="primary-buttons" value="Salvar">
+        	</form>
         </div>
     </div>
 </body>

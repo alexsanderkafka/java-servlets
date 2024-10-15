@@ -12,8 +12,8 @@
     <div class="container-initial">
     	<h1>++Bolso</h1>
         <div class="box-menu">
-        	<a class="primary-buttons">Cadastrar despesas</a>
-        	<a class="primary-buttons">Visualizar relatório</a>
+        	<a class="primary-buttons" href="/SaveMoney/view/cadastrarDespesa.jsp">Cadastrar despesas</a>
+        	<a class="primary-buttons" href="/SaveMoney/categoria/visualizar">Visualizar relatório</a>
         </div>
     </div>
 </body>

@@ -11,26 +11,20 @@ import model.Despesa;
 @WebServlet("/despesa/cadastrar")
 public class CadastrarDespesaServlet extends HttpServlet{
 
-	/**
-	 * 
-	 */
-	//private static final long serialVersionUID = 1L;
-
 	@Override
-	
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		// TODO Auto-generated method stub
-		super.doPost(request, response);
+		//super.doPost(request, response);
 		
-		// Lógica para cadastrar nova despesa
-		String descricao = request.getParameter("descricao");
-		Double valor = Double.valueOf(request.getParameter("valor"));
-		String categoria = request.getParameter("categoria");
-		String data = request.getParameter("data");
-		Despesa despesa = new Despesa(descricao, valor, data, categoria);
 		
-		// Adicione a despesa à lista ou banco de dados
-		response.sendRedirect("despesa/visualizar"); // Redireciona para a listagem de despesas
+		/*
+		String description = request.getParameter("description");
+		Double value = Double.valueOf(request.getParameter("value"));
+		String category = request.getParameter("categoria");
+		String date = request.getParameter("date");*/
+		//Despesa despesa = new Despesa(descricao, valor, data, categoria);
+		
+		response.sendRedirect("/SaveMoney/despesa/visualizar");
+		//request.getRequestDispatcher("/view/listaDespesas.jsp").forward(request, response);
 	}
 	
 }

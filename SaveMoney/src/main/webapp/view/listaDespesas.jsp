@@ -26,8 +26,6 @@
     </header>
        
     <div class="container-list">
-    	
-    	
     	<%
 	    	ArrayList<Despesa> despesas = (ArrayList<Despesa>)request.getAttribute("despesas");
 	    	String dataAtual = ""; 
@@ -51,7 +49,7 @@
 	    					break;
 	    				}
 	    	%>
-			          <div class="list-tile">
+			          <div class="list-tile" id="<%= despesaAtual.getId()%>">
 			          	<%
 			          	  if(despesaAtual.getCategoria() == "Gasto"){
 			          		  %>
@@ -69,7 +67,7 @@
 			                <h1><%= despesaAtual.getDescricao() %></h1>
 			                <h5>Você guardou R$ <%= despesaAtual.getValor() %></h5>
 			              </div>
-			              <button>
+			              <button> <!--onclick="teste(<%= despesaAtual.getId()%>)"-->
 			                <i class="material-symbols-outlined" style="color: #FFF;">
 			                  delete
 			                </i>
