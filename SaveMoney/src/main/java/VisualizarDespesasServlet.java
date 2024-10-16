@@ -14,7 +14,7 @@ import model.Despesa;
 public class VisualizarDespesasServlet extends HttpServlet{
 	private static final long serialVersionUID = 1L;
 	
-	private BancoDeDados bd = new BancoDeDados();
+	private BancoDeDados bd = BancoDeDados.getInstancia();
 
 	@Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
