@@ -31,8 +31,8 @@
 	        	<input type="date" name="date">
 	        	<label>Categoria: </label>
 	        	<select name="category">	
-	        		<option value="loss">Gasto</option>
-	    			<option value="save">Economia</option>
+	        		<option value="Gasto">Gasto</option>
+	    			<option value="Economia">Economia</option>
 	        	</select>
 	        	<label>Descrição: </label>
 	        	<textarea rows="5" cols="2" name="description"></textarea>

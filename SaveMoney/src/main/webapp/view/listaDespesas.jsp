@@ -1,3 +1,7 @@
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="java.util.Locale"%>
+<%@page import="java.text.NumberFormat"%>
+<%@page import="java.util.Date"%>
 <%@page import="model.Despesa"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
@@ -34,7 +38,6 @@
 	    		Despesa despesa = despesas.get(i);
 	    		String dataDespesa = despesa.getData();
 	    		
-	    		
 	    		if (!dataDespesa.equals(dataAtual)) {
 	    			dataAtual = dataDespesa;
 	    			%>
@@ -50,8 +53,8 @@
 	    				}
 	    	%>
 			          <div class="list-tile" id="<%= despesaAtual.getId()%>">
-			          	<%
-			          	  if(despesaAtual.getCategoria() == "Gasto"){
+						<%
+			          	  if(despesaAtual.getCategoria().toLowerCase().equals("gasto")){
 			          		  %>
 			          		  <img src="../images/logo/send-money.png" alt="">
 			          	<%		  
@@ -65,9 +68,21 @@
 			            <div class="container-text-button">
 			              <div class="text-list-tile">
 			                <h1><%= despesaAtual.getDescricao() %></h1>
-			                <h5>Você guardou R$ <%= despesaAtual.getValor() %></h5>
+			                
+			                <%
+				          	  if(despesaAtual.getCategoria().toLowerCase().equals("gasto")){
+				          		  %>
+								 <h5>Você guardou R$ <%= String.format("%,.2f", despesaAtual.getValor()) %></h5>
+				          	<%		  
+				          	  }else{
+				          		 %> 
+				          		 <h5>Você guardou R$ <%= String.format("%,.2f", despesaAtual.getValor()) %></h5>
+				          	<%
+				          	  }
+				          	%>
+			         
 			              </div>
-			              <button> <!--onclick="teste(<%= despesaAtual.getId()%>)"-->
+			              <button onclick="deleteItem(<%= despesaAtual.getId()%>)">
 			                <i class="material-symbols-outlined" style="color: #FFF;">
 			                  delete
 			                </i>
@@ -83,5 +98,31 @@
 	    	}
 	    	%>
     </div>
+    <script type="text/javascript">
+	    function deleteItem(id){
+	    	const xhr = new XMLHttpRequest();
+	    	xhr.open("POST", "http://localhost:8080/SaveMoney/despesa/excluir?id=" + id);
+	    	xhr.setRequestHeader("Content-Type", "application/json; charset=UTF-8");
+	    	    		
+	    	console.log(xhr.status);
+	    	
+	    	/*
+	    	xhr.onload = function() {
+	    		if (xhr.status >= 200 && xhr.status < 300) {
+	    			console.log('Resposta:', xhr.responseText);
+	    	 	} else {
+	    	 			console.error('Erro na requisição:', xhr.statusText)
+	    	 	}
+	    	 };
+	    	    	    
+	    	 xhr.onerror = function() {
+	    	 console.error('Erro na requisição');
+	    	 };*/
+	    	
+	    	xhr.send();
+	    	var div = document.getElementById(id);
+	    	div.remove();
+	    }
+    </script>
 </body>
 </html>

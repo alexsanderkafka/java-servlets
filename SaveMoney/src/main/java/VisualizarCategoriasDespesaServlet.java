@@ -25,6 +25,12 @@ public class VisualizarCategoriasDespesaServlet extends HttpServlet{
 		//super.doGet(request, response);
 		
 		List<Despesa> despesas = db.getDespesas();
+		double lossTotal = db.getLossTotal();
+		double saveTotal = db.getSaveTotal();
+		
+		request.setAttribute("despesas", despesas);
+		request.setAttribute("saveTotal", saveTotal);
+		request.setAttribute("lossTotal", lossTotal);
 		
 		request.setAttribute("despesas", despesas);
 		request.getRequestDispatcher("/view/relatorioDespesas.jsp").forward(request, response);

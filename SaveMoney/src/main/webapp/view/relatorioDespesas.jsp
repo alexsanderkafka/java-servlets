@@ -26,6 +26,18 @@
         </nav>
     </header>
     
+    <%
+    	double lossTotal = (double) request.getAttribute("lossTotal");
+    	double saveTotal = (double) request.getAttribute("saveTotal");
+    %>
+    
+    <div id="container-total">
+    	<div id="box-total">
+    			<h1 id="total-loss">Total de despesas: R$ <%= String.format("%,.2f", lossTotal) %></h1>
+    			<h1 id="total-save">Total economizado: R$ <%= String.format("%,.2f", saveTotal) %></h1>
+    	</div>
+    </div>
+    
     <div id="container-custom-button">
 	    <div id="custom-toggle-button">
 	    	<input id="toggle-on" class="toggle toggle-left" name="toggle" value="false" type="radio" checked>
@@ -35,7 +47,7 @@
 	    </div>
     </div>
        
-    <div class="container-list" id="container-date-list-checked" hidden="false">
+    <div class="container-list" id="container-date-list-checked">
     	<%
 	    	ArrayList<Despesa> despesas = (ArrayList<Despesa>)request.getAttribute("despesas");
 	    	String dataAtual = ""; 
@@ -58,6 +70,7 @@
 	    				if (!despesaAtual.getData().equals(dataAtual)) {
 	    					break;
 	    				}
+	    				
 	    	%>
 			          <div class="list-tile">
 			          	<%
@@ -76,23 +89,17 @@
 			              <div class="text-list-tile">
 			                <h1><%= despesaAtual.getDescricao() %></h1>
 			                <%
-				          	  if(despesaAtual.getCategoria() == "Gasto"){
+				          	  if(despesaAtual.getCategoria().toLowerCase() == "gasto"){
 				          		  %>
-				          		  <h5>Você gastou R$ <%= despesaAtual.getValor() %></h5>
+				          		  <h5>Você gastou R$ <%= String.format("%,.2f", despesaAtual.getValor()) %></h5>
 				          	<%		  
 				          	  }else{
 				          		 %> 
-				          		 <h5>Você guardou R$ <%= despesaAtual.getValor() %></h5>
+				          		 <h5>Você guardou R$ <%= String.format("%,.2f", despesaAtual.getValor()) %></h5>
 				          	<%
 				          	  }
 				          	%>
-			                
 			              </div>
-			              <button>
-			                <i class="material-symbols-outlined" style="color: #FFF;">
-			                  delete
-			                </i>
-			              </button>
 			            </div>
 			          </div>
 	    	<%
@@ -117,13 +124,8 @@
 							<div class="container-text-button">
 							   <div class="text-list-tile">
 							      <h1><%= currentDespesa.getDescricao() %></h1>
-							      <h5>Você gastou R$ <%=currentDespesa.getValor() %></h5>
+							      <h5>Você gastou R$ <%= String.format("%,.2f", currentDespesa.getValor()) %></h5>
 							   </div>
-							    <button>
-							     <i class="material-symbols-outlined" style="color: #FFF;">
-							     	delete
-							     </i>
-							  	</button>
 							</div>
 						</div>	  
 					  <%
@@ -142,13 +144,8 @@
 						<div class="container-text-button">
 						   <div class="text-list-tile">
 						      <h1><%= currentDespesa.getDescricao() %></h1>
-						      <h5>Você guardou R$ <%=currentDespesa.getValor() %></h5>
+						      <h5>Você guardou R$ <%= String.format("%,.2f", currentDespesa.getValor()) %></h5>
 						   </div>
-						    <button>
-						     <i class="material-symbols-outlined" style="color: #FFF;">
-						     	delete
-						     </i>
-						  	</button>
 						</div>
 					</div>	  
 				  <%

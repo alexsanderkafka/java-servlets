@@ -20,7 +20,7 @@ public class CadastrarDespesaServlet extends HttpServlet{
 		
 		String description = request.getParameter("description");
 		Double value = Double.valueOf(request.getParameter("value"));
-		String category = request.getParameter("categoria");
+		String category = request.getParameter("category");
 		String date = request.getParameter("date").toString();
 		Despesa despesa = new Despesa(description, value, date, category);
 		
