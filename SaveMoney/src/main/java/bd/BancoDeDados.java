@@ -26,7 +26,7 @@ public class BancoDeDados {
 		try {
 			File file = new File(dbFile);
 			
-			if(!file.exists()) file.mkdirs();
+			//if(!file.exists()) file.mkdirs();
 			
 			System.out.println("Path: " + file.getAbsolutePath());
 			

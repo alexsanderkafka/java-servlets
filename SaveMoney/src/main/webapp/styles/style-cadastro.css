@@ -6,7 +6,7 @@
 
 .box-register {
     width: 40%;
-    height: 60%;
+    height: auto;
     background: white;
     border: 1px solid #F4A942;
     border-radius: 5px;
